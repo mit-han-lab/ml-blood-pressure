@@ -123,3 +123,17 @@ def make_model() -> nn.Module:
 To enable proper usage of the CometML logger:
 1. Set the environment variable $COMET_API_KEY to your own Comet API key.
 2. Set the project name as desired in the CometWriter class in `callbacks.py`
+
+
+
+### Results
+The table below shows the standard deviation of the prediction error (in mmHg) for 6 models: Baseline (FC), LSTM (waveforms only), Transformer (waveforms only), CNN (waveforms only), Transformer + anthropometric data, CNN + anthropometric data. The results are computed in the bucketed dataset split setting, and the error std is shown per seed and on average, along with the number of parameters and FLOPs of each model.
+
+| **Model**                | **Error Std Seed 1** | **Error Std Seed 2** | **Error Std Seed 3** | **Avg Error Std**  | **\#Params** | **MFLOPs** |
+|--------------------------|----------------------|----------------------|----------------------|--------------------|--------------|------------|
+| **Baseline**             | 9.08                 | 9.58                 | 9.88                 | **9.51**           | 12.9K        | 0.026      |
+| **LSTM**                 | 10.67                | 9.66                 | 9.12                 | **9.81**           | 1.58M        | 317.5      |
+| **Transformer**          | 8.76                 | 8.61                 | 9.18                 | **8.85**           | 4.73M        | 943.9      |
+| **CNN**                  | 8.86                 | 8.92                 | 8.64                 | **8.81**           | 37.3K        | 7.44       |
+| **Transformer + anthro** | 8.60                 | 8.98                 | 8.40                 | **8.7**            | 4.73M        | 944        |
+| **CNN + anthro**         | 7.56                 | 8.29                 | 7.92                 | **7.92**           | 37.4K        | 7.48       |
