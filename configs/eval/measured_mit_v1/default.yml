@@ -1,0 +1,36 @@
+dataset:
+  name: measured_mit_v1
+  root: './data/measured_mit_v1/npy/'
+  split_ratio: [0, 0, 1]
+  custom_split_indices: null
+  beats_per_subject: 1
+  resample_len: 100
+  target: map
+  part: 1
+  scale_bestfit: false
+
+model:
+  name: fc
+  in_ch: 7
+  out_ch: 512
+  layer_num: 6
+  feats: ['shape', 'v']
+
+num_epochs: 100
+batch_size: 64
+workers_per_gpu: 8
+
+criterion:
+  name: mse
+
+optimizer:
+  name: adam
+  lr: 1e-3
+  weight_decay: 0.001
+
+scheduler:
+  name: constant
+
+pdb: False
+
+device: cpu

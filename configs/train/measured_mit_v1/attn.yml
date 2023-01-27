@@ -1,0 +1,7 @@
+model:
+  name: attn
+  in_ch: 2
+  out_ch: 256
+  n_head: 8
+  layer_num: 6
+  dropout: 0.1

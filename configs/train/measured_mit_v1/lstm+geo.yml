@@ -1,0 +1,8 @@
+model:
+  name: lstm
+  in_ch: 6
+  out_ch: 64
+  bidirectional: False
+  layer_num: 2
+  dropout: 0.1
+  feats: ['shape', 'v', 'age', 'weight', 'height', 'gender']

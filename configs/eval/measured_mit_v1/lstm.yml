@@ -1,0 +1,8 @@
+model:
+  name: lstm
+  in_ch: 2
+  out_ch: 256
+  bidirectional: False
+  layer_num: 3
+  dropout: 0
+

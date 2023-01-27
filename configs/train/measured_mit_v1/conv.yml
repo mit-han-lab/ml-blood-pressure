@@ -1,0 +1,19 @@
+model:
+  name: conv
+  in_ch: 2
+  out_ch: 64
+  kernel_size: 3
+  stride: 1
+  padding: 1
+  layer_num: 3
+  dropout: 0
+
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0001
+
+scheduler:
+  name: constant
+
+batch_size: 64
